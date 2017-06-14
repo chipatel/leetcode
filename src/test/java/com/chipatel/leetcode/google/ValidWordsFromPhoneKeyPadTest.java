@@ -3,6 +3,11 @@
  */
 package com.chipatel.leetcode.google;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -14,8 +19,8 @@ public class ValidWordsFromPhoneKeyPadTest {
 
   @Test
   public void test() {
-    System.out.println(vwfpkp.validDictionaryWords("28"));
-
+    List<String> expt = new ArrayList<String>(
+        Arrays.asList(new String[] {"AT", "AU", "AV", "BT", "BU", "BV", "CT", "CU", "CV"}));
+    Assert.assertEquals(expt, vwfpkp.validDictionaryWords("28"));
   }
-
 }

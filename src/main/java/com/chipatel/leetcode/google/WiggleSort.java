@@ -3,28 +3,20 @@
  */
 package com.chipatel.leetcode.google;
 
-import java.util.Arrays;
-
 /**
  * @author Chiragkumar Patel <a href="https://github.com/chipatel">GitHub</a>
+ * 
+ *         https://leetcode.com/problems/wiggle-sort/#/description
+ * 
+ *         Given an unsorted array nums, reorder it in-place such that nums[0] <= nums[1] >= nums[2]
+ *         <= nums[3]....
+ * 
+ *         For example, given nums = [3, 5, 2, 1, 6, 4], one possible answer is [1, 6, 2, 5, 3, 4].
  *
  */
-public class WiggleSort {
-  public int[] wiggleSortNot(int[] nums) {
-    int len = nums.length;
-    Arrays.sort(nums);
-    int[] res = new int[len];
-    int cnt = 0;
-    for (int i = 0; i < len; i += 2) {
-      res[i] = nums[cnt];
-      res[i + 1] = nums[(len - 1) - cnt];
-      cnt++;
-    }
-    System.out.println(Arrays.toString(res));
-    return nums;
-  }
 
-  public void wiggleSort(int[] nums) {
+public class WiggleSort {
+  public int[] wiggleSort(int[] nums) {
     for (int i = 0; i < nums.length; i++) {
       if (i % 2 == 1) {
         if (nums[i - 1] > nums[i]) {
@@ -34,7 +26,7 @@ public class WiggleSort {
         swap(nums, i);
       }
     }
-    System.out.println(Arrays.toString(nums));
+    return nums;
   }
 
   public void swap(int[] nums, int i) {

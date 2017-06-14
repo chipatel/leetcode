@@ -27,7 +27,7 @@ public class ValidWordsFromPhoneKeyPad {
   public List<String> validDictionaryWords(String digits) {
     Set<String> words = readDictionary();
     List<String> allPossibleWords = possibleWords(digits);
-    List<String> res = new ArrayList<>();
+    List<String> res = new ArrayList<String>();
     for (String str : allPossibleWords) {
       if (words.contains(str)) {
         res.add(str);
@@ -51,7 +51,6 @@ public class ValidWordsFromPhoneKeyPad {
         }
       }
     }
-    System.out.println(res);
     return res;
   }
 
